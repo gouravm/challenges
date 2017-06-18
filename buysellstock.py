@@ -9,27 +9,22 @@
 # iterate O(n) time complexity to find the best sp-pp difference
 
 def findthemaxprofit(myl):
-    maxprofit=0
 
-    #purchase price pointer
-    pppointer=0
+   minprice=myl[0]
+   maxprofit=0
 
-    #selling price pointer
-    sppointer=pppointer+1
+   for price in myl:
 
-    #len of array
-    end=len(myl)
+       minprice=min(price,minprice)
+       comparePrice=price-minprice
+       maxprofit=max(maxprofit,comparePrice)
 
-    profit=0
-    while sppointer<end:
-        profit=myl[sppointer]-myl[pppointer]
-        if profit>maxprofit:
-            maxprofit=profit
-        pppointer+=1
-        sppointer+=1
 
-    return maxprofit
+   return maxprofit
 
 
 stocklist=[12,11,15,3,10]
+print(findthemaxprofit(stocklist))
+
+stocklist=[10,12,14,12,13,11,8,7,6,13,23,45,11,10]
 print(findthemaxprofit(stocklist))
