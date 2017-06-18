@@ -3,10 +3,6 @@
 # max profit=10-3=>7 where 3 is purchase price and
 # 10 is selling price
 
-# Pseudo code:
-# set a pointer at 0th element as purchase price
-# set another pointer at 1st element as selling price
-# iterate O(n) time complexity to find the best sp-pp difference
 
 def findthemaxprofit(myl):
 
